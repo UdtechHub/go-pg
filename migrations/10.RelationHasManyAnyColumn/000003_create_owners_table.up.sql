@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS owners (
+    id UUID PRIMARY KEY DEFAULT UUID_GENERATE_V4() UNIQUE NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(255),
+    email VARCHAR(255),
+    manufacturer_id UUID,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT (NOW() AT TIME ZONE 'UTC'),
+    updated_at TIMESTAMPTZ
+);
